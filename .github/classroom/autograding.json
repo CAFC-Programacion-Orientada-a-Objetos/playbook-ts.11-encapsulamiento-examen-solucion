@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "Prueba de Garage.add",
+      "setup": "npm i",
+      "run": "npm test add",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Prueba de Garage.remove",
+      "setup": "",
+      "run": "npm test remove",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Prueba de Garage.getVehicles",
+      "setup": "",
+      "run": "npm test getVehicles",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "Prueba de Garage.getOlderThan",
+      "setup": "",
+      "run": "npm test getOlderThan",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "Prueba de Garage.getMostUsed",
+      "setup": "",
+      "run": "npm test getMostUsed",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}

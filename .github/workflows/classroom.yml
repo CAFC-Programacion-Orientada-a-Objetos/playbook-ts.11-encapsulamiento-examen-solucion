@@ -1,0 +1,120 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Prueba de getSum
+      id: prueba-de-getsum
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de getSum
+        setup-command: npm i
+        command: npm test getSum
+        timeout: 10
+        max-score: 10
+    - name: Prueba de getSequence
+      id: prueba-de-getsequence
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de getSequence
+        setup-command: ''
+        command: npm test getSequence
+        timeout: 10
+        max-score: 10
+    - name: Prueba de getEvenSum
+      id: prueba-de-getevensum
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de getEvenSum
+        setup-command: ''
+        command: npm test getEvenSum
+        timeout: 10
+        max-score: 10
+    - name: Prueba de count5and3
+      id: prueba-de-count5and3
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de count5and3
+        setup-command: ''
+        command: npm test count5and3
+        timeout: 10
+        max-score: 10
+    - name: Prueba de calculatePower
+      id: prueba-de-calculatepower
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de calculatePower
+        setup-command: ''
+        command: npm test calculatePower
+        timeout: 10
+        max-score: 10
+    - name: Prueba de countVowels
+      id: prueba-de-countvowels
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de countVowels
+        setup-command: ''
+        command: npm test countVowels
+        timeout: 10
+        max-score: 10
+    - name: Prueba de countCharacters
+      id: prueba-de-countcharacters
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de countCharacters
+        setup-command: ''
+        command: npm test countCharacters
+        timeout: 10
+        max-score: 10
+    - name: Prueba de sumDigits
+      id: prueba-de-sumdigits
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de sumDigits
+        setup-command: ''
+        command: npm test sumDigits
+        timeout: 10
+        max-score: 10
+    - name: Prueba de reverseString
+      id: prueba-de-reversestring
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de reverseString
+        setup-command: ''
+        command: "npm test \treverseString"
+        timeout: 10
+        max-score: 10
+    - name: Prueba de factorial
+      id: prueba-de-factorial
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Prueba de factorial
+        setup-command: ''
+        command: npm test factorial
+        timeout: 10
+        max-score: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        PRUEBA-DE-GETSUM_RESULTS: "${{steps.prueba-de-getsum.outputs.result}}"
+        PRUEBA-DE-GETSEQUENCE_RESULTS: "${{steps.prueba-de-getsequence.outputs.result}}"
+        PRUEBA-DE-GETEVENSUM_RESULTS: "${{steps.prueba-de-getevensum.outputs.result}}"
+        PRUEBA-DE-COUNT5AND3_RESULTS: "${{steps.prueba-de-count5and3.outputs.result}}"
+        PRUEBA-DE-CALCULATEPOWER_RESULTS: "${{steps.prueba-de-calculatepower.outputs.result}}"
+        PRUEBA-DE-COUNTVOWELS_RESULTS: "${{steps.prueba-de-countvowels.outputs.result}}"
+        PRUEBA-DE-COUNTCHARACTERS_RESULTS: "${{steps.prueba-de-countcharacters.outputs.result}}"
+        PRUEBA-DE-SUMDIGITS_RESULTS: "${{steps.prueba-de-sumdigits.outputs.result}}"
+        PRUEBA-DE-REVERSESTRING_RESULTS: "${{steps.prueba-de-reversestring.outputs.result}}"
+        PRUEBA-DE-FACTORIAL_RESULTS: "${{steps.prueba-de-factorial.outputs.result}}"
+      with:
+        runners: prueba-de-getsum,prueba-de-getsequence,prueba-de-getevensum,prueba-de-count5and3,prueba-de-calculatepower,prueba-de-countvowels,prueba-de-countcharacters,prueba-de-sumdigits,prueba-de-reversestring,prueba-de-factorial
