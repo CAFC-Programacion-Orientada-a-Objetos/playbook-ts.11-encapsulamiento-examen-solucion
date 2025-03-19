@@ -3,15 +3,16 @@
 
  <img alt="calificación" align="right" height="28" src="../../blob/badges/.github/badges/points-label0.svg" />
   
-# 🥷 Introducción al principio de abstracción
+# 😱 Examen: el principio de encapsulamiento
 
-El objetivo de este ejercicio es introducir los conceptos básicos relacionados el principio de abstracción:
+Este ejercicio tiene como objetivo evaluar el nivel de entendimiento y uso del principio de encapsulación en la programación orientada a objetos. Algunos de los conceptos que se abordan en este ejercicio son:
 
-- Clase. Es un modelo o plantilla para crear objetos.
-- Objeto. Es una instancia de una clase.
-- Atributo. Son las propiedades o características de un objeto.
-- Método. Son las acciones que puede realizar un objeto.
-- Método constructor. Es un método especial que se utiliza para inicializar los atributos de un objeto.
+- **Métodos y Atributos Públicos:** Se trata la exposición directa de métodos y atributos, accesibles desde cualquier parte del programa.
+- **Métodos y Atributos Privados:** Se destaca la importancia de limitar el acceso directo a ciertos elementos solo al interior de la clase, reforzando la encapsulación.
+- **Métodos de Acceso de Lectura:** Se enfoca en la creación de métodos para obtener información de atributos sin alterar el estado interno del objeto.
+- **Métodos de Acceso de Escritura:** Explora la implementación de métodos específicos para modificar atributos, asegurando validaciones antes de afectar el estado del objeto.
+
+La encapsulación es clave para crear clases seguras y modulares, permitiendo un control preciso en sistemas orientados a objetos.
 
 # 📋 Instrucciones
 
